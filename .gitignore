@@ -10,3 +10,5 @@ _fresh/
 # npm dependencies
 node_modules/
 config.json
+cert.pem
+key.pem
