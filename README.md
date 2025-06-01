@@ -16,12 +16,8 @@
    ```
    1. `macAddress` 字段为你的电脑的 MAC 地址，
    2. 把你的密码使用 sha256 加密后填入 `passwordWithSha256` 字段
-4. 编译项目
+4. 启动项目
    ```bash
-   deno task build
+   deno task serve
    ```
-5. 启动项目
-   ```bash
-   deno task preview
-   ```
-6. 打开浏览器，访问 `http://localhost:<端口号>`，即可使用
+5. 打开浏览器，访问 `http://localhost:<端口号>`，即可使用
