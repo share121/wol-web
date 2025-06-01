@@ -9,7 +9,7 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "server": "deno task build && deno task preview"
+    "serve": "deno task build && deno task preview"
   },
   "lint": {
     "rules": {
