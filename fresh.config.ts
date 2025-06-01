@@ -1,7 +1,7 @@
 import { defineConfig } from "$fresh/server.ts";
 import tailwind from "@pakornv/fresh-plugin-tailwindcss";
 import config from "./config.json" with { type: "json" };
-import fs from "fs";
+import fs from "node:fs";
 
 export default defineConfig({
   plugins: [tailwind()],
