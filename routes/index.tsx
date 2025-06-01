@@ -1,23 +1,11 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-// @deno-types="@types/wol"
-import wol from "wol";
 import Form from "../islands/form.tsx";
 import config from "../config.json" with { type: "json" };
+import { wakeOnLan } from "@hk/wol";
 
 export interface Data {
   success?: boolean;
   message?: string;
-}
-
-function wake(mac: string) {
-  return new Promise<boolean>((resolve, reject) => {
-    wol.wake(mac, function (err, res) {
-      if (err) {
-        reject(err);
-      }
-      resolve(res!);
-    });
-  });
 }
 
 export const handler: Handlers<Data> = {
@@ -34,16 +22,10 @@ export const handler: Handlers<Data> = {
       });
     }
     try {
-      const res = await wake("68-3E-26-13-9D-2C");
-      if (res) {
-        return ctx.render({
-          success: true,
-          message: "唤醒数据包发送成功",
-        });
-      }
+      await wakeOnLan(config.targetMac, config.targetIp, config.targetPort);
       return ctx.render({
-        success: false,
-        message: "唤醒数据包发送失败",
+        success: true,
+        message: "唤醒数据包发送成功",
       });
     } catch (err) {
       if (err instanceof Error) {

@@ -1,6 +1,8 @@
 {
   "passwordWithSha256": "ergerghad45fe68f7sef",
-  "macAddress": "11-22-EE-22-87-2C",
+  "targetMac": "11-22-EE-22-87-2C",
+  "targetIp": "192.168.1.100",
+  "targetPort": 9,
   "cert": "",
   "key": "",
   "port": 23570,
