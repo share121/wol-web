@@ -21,6 +21,8 @@
    ```bash
    mv config.example.json config.json
    ```
+   注意密码要 sha256 加密后填在配置文件里\
+   证书和私钥是可选的，需要填写文件路径
 4. 启动项目
    ```bash
    deno task serve
