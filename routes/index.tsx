@@ -23,11 +23,14 @@ export const handler: Handlers<Data> = {
     }
     try {
       await wakeOnLan(config.targetMac, config.targetIp, config.targetPort);
+      console.log("唤醒", config.targetIp, "成功");
       return ctx.render({
         success: true,
         message: "唤醒数据包发送成功",
       });
     } catch (err) {
+      console.error("唤醒", config.targetIp, "失败");
+      console.error(err);
       if (err instanceof Error) {
         return ctx.render({
           success: false,
