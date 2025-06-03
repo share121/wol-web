@@ -12,3 +12,4 @@ node_modules/
 config.json
 cert.pem
 key.pem
+config.json.local
