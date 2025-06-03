@@ -11,4 +11,7 @@ export default defineConfig({
     port: config.port,
     hostname: config.hostname ? config.hostname : undefined,
   },
+  build: {
+    target: "es2015",
+  },
 });

@@ -7,11 +7,16 @@ export default function Form(props: Data) {
     inpPwd.value = sha256(inpPwd.value);
   }
 
+  globalThis.addEventListener("load", () => {
+    document.getElementById("inp-pwd")?.focus();
+  });
+
   return (
     <form method="post" onSubmit={handleSubmit}>
       <div className="card-body">
         <h2 className="card-title">WOL</h2>
         <input
+          autoFocus
           type="password"
           placeholder="输入密码"
           className="input w-full"
